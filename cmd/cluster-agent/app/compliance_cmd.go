@@ -9,7 +9,7 @@
 package app
 
 import (
-	"github.com/DataDog/datadog-agent/cmd/security-agent/app"
+	"github.com/DataDog/datadog-agent/cmd/security-agent/common"
 	"github.com/spf13/cobra"
 )
 
@@ -22,6 +22,6 @@ var (
 
 func init() {
 	confPathArray := []string{confPath}
-	complianceCmd.AddCommand(app.CheckCmd(confPathArray))
+	complianceCmd.AddCommand(common.CheckCmd(confPathArray))
 	ClusterAgentCmd.AddCommand(complianceCmd)
 }
